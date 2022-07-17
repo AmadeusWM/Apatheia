@@ -21,10 +21,10 @@ quotes = loadQuotes().get("quotes")
 
 curr_date = date.today()
 
-amountQuotes = len(quotes);
-random.seed((curr_date.day + curr_date.month + curr_date.year) % amountQuotes)
+# seed date, such that everyone has the same random quote every day
+random.seed(curr_date.day + curr_date.month + curr_date.year)
 
-randomQuote = quotes[random.randrange(amountQuotes)]
+randomQuote = quotes[random.randrange(len(quotes))]
 
 bold = "\033[1m"
 
