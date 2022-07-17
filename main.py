@@ -1,10 +1,12 @@
 import json
 import os
+import random
 from datetime import date
 
 CURRDIR = os.path.dirname(os.path.realpath(__file__))
 YELLOW = (194,217,76)
 PINKISH = (248,131,121)
+
 
 def loadQuotes():
     with open (f'{CURRDIR}/quotes.json') as f:
@@ -18,7 +20,11 @@ def to_coloured(col):
 quotes = loadQuotes().get("quotes")
 
 curr_date = date.today()
-randomQuote = quotes[(curr_date.day + curr_date.month + curr_date.year) % len(quotes)]
+
+amountQuotes = len(quotes);
+random.seed((curr_date.day + curr_date.month + curr_date.year) % amountQuotes)
+
+randomQuote = quotes[random.randrange(amountQuotes)]
 
 bold = "\033[1m"
 
