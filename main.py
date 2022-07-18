@@ -29,4 +29,4 @@ randomQuote = quotes[random.randrange(len(quotes))]
 bold = "\033[1m"
 
 print(bold + to_coloured(YELLOW) + randomQuote.get("text") + \
-        "\n- " + to_coloured(PINKISH) + randomQuote.get("author"))
+        to_coloured(PINKISH) + "\n- " + randomQuote.get("author"))
