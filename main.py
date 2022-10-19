@@ -28,5 +28,7 @@ randomQuote = quotes[random.randrange(len(quotes))]
 
 bold = "\033[1m"
 
-print(bold + to_coloured(YELLOW) + randomQuote.get("text") + \
-        to_coloured(PINKISH) + "\n- " + randomQuote.get("author"))
+# print(bold + to_coloured(YELLOW) + randomQuote.get("text") + \
+#         to_coloured(PINKISH) + " - " + randomQuote.get("author"))
+
+print(randomQuote.get("text") + " - " + randomQuote.get("author"))
